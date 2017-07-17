@@ -15,15 +15,16 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
 
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
-
 jar {
     baseName = 'discovery-server'
     version = '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
 }
 
 dependencies {
@@ -40,4 +41,8 @@ dependencies {
 //    compile('org.springframework.boot:spring-boot-starter-security')
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
 }
